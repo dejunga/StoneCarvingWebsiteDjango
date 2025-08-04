@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moja Web Stranica</title>
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+</head>
+<body>
+    <!-- Navigation Panel -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">MojaStranica</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Početna</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">O nama</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#gallery" class="nav-link">Galerija</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Kontakt</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Dobrodošli na našu web stranicu</h1>
+                <p>Ovo je lijepa statična stranica s navigacijom i slikama</p>
+                <button class="cta-button">Saznaj više</button>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2>O našoj stranici</h2>
+                <p>Ova stranica je kreirana koristeći Django framework. Sadrži moderan dizajn s responsivnom navigacijom i privlačnim vizualnim elementima.</p>
+                <div class="features">
+                    <div class="feature">
+                        <h3>Responzivna</h3>
+                        <p>Stranica se prilagođava svim uređajima</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Moderna</h3>
+                        <p>Koristi najnovije web tehnologije</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Brza</h3>
+                        <p>Optimizirana za brzinu učitavanja</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <h2>Galerija slika</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="{% static 'website/images/placeholder1.jpg' %}" alt="Slika 1">
+                        <div class="overlay">
+                            <h3>Slika 1</h3>
+                            <p>Opis prve slike</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="{% static 'website/images/placeholder2.jpg' %}" alt="Slika 2">
+                        <div class="overlay">
+                            <h3>Slika 2</h3>
+                            <p>Opis druge slike</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="{% static 'website/images/placeholder3.jpg' %}" alt="Slika 3">
+                        <div class="overlay">
+                            <h3>Slika 3</h3>
+                            <p>Opis treće slike</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Kontaktiraj nas</h2>
+                <p>Imamo pitanja? Slobodno nas kontaktirajte!</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Email</h3>
+                        <p>info@mojastranica.hr</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Telefon</h3>
+                        <p>+385 1 234 5678</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Adresa</h3>
+                        <p>Zagreb, Hrvatska</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 MojaStranica. Sva prava pridržana.</p>
+        </div>
+    </footer>
+    
+    <script src="{% static 'website/js/main.js' %}"></script>
+</body>
+</html>
