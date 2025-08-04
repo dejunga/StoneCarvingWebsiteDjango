@@ -69,27 +69,22 @@
             <div class="container">
                 <h2>Galerija slika</h2>
                 <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="{% static 'website/images/placeholder1.jpg' %}" alt="Slika 1">
+                    {% for image in proizvodi_images %}
+                    <div class="gallery-item" onclick="openLightbox({{ forloop.counter0 }})">
+                        <img src="{% static image.url %}" alt="{{ image.name }}" data-full-src="{% static image.url %}">
                         <div class="overlay">
-                            <h3>Slika 1</h3>
-                            <p>Opis prve slike</p>
+                            <h3>{{ image.name }}</h3>
+                            <p>Kvalitetan klesarski rad</p>
                         </div>
                     </div>
+                    {% empty %}
                     <div class="gallery-item">
-                        <img src="{% static 'website/images/placeholder2.jpg' %}" alt="Slika 2">
-                        <div class="overlay">
-                            <h3>Slika 2</h3>
-                            <p>Opis druge slike</p>
+                        <div class="no-images">
+                            <h3>Nema slika</h3>
+                            <p>Dodajte slike u proizvodi folder</p>
                         </div>
                     </div>
-                    <div class="gallery-item">
-                        <img src="{% static 'website/images/placeholder3.jpg' %}" alt="Slika 3">
-                        <div class="overlay">
-                            <h3>Slika 3</h3>
-                            <p>Opis treće slike</p>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>
@@ -123,6 +118,21 @@
             <p>&copy; 2024 MojaStranica. Sva prava pridržana.</p>
         </div>
     </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="close" onclick="closeLightbox()">&times;</span>
+            <img id="lightbox-img" src="" alt="">
+            <div class="lightbox-nav">
+                <button class="nav-btn prev-btn" onclick="prevImage()">&#8249;</button>
+                <button class="nav-btn next-btn" onclick="nextImage()">&#8250;</button>
+            </div>
+            <div class="lightbox-caption">
+                <h3 id="lightbox-title"></h3>
+            </div>
+        </div>
+    </div>
     
     <script src="{% static 'website/js/main.js' %}"></script>
 </body>
